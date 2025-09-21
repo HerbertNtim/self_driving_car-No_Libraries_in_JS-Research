@@ -52,7 +52,6 @@ class Car {
         s == null ? 0 : 1 - s.offset
       );
       const outputs = NeuralNetwork.feedForward(offsets, this.brain);
-      console.log(outputs);
 
       if (this.useBrain) {
         this.controls.forward = outputs[0];
@@ -148,7 +147,7 @@ class Car {
     if (this.sensor && drawSensor) {
       this.sensor.draw(ctx);
     }
-    
+
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(-this.angle);
